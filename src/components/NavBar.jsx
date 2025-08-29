@@ -29,9 +29,9 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-1">
           <NavLink to="/" className={linkClass}>Inicio</NavLink>
           <NavLink to="/menu" className={linkClass}>Menú</NavLink>
-          <NavLink to="/reservaciones" className={linkClass}>Reservaciones</NavLink>
+        
           <NavLink to="/nosotros" className={linkClass}>Nosotros</NavLink>
-          <NavLink to="/contacto" className={linkClass}>Contacto</NavLink>
+   
         </nav>
 
         <button className="md:hidden p-2 rounded-lg hover:bg-white/10" onClick={()=>setOpen(!open)} aria-label="Abrir menú">

@@ -12,9 +12,7 @@ return (
   <a href="/menu" className="px-6 py-3 rounded-xl bg-coral text-tinta font-semibold hover:opacity-90">
     Ver Menú
   </a>
-  <a href="/reservaciones" className="px-6 py-3 rounded-xl border border-white/30 hover:bg-white/10">
-    Reservar Mesa
-  </a>
+
 </div>
 </div>
 </div>

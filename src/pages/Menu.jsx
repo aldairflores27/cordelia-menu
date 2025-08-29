@@ -11,6 +11,18 @@ Pescados: [
 { name: 'Mojo de Ajo', price: 230, desc: 'Con guarniciones' },
 { name: 'A la Diabla', price: 230, desc: 'Picante' },
 ],
+Bebidas: [
+{ name: 'Coca cola', price: 230, desc: 'Con guarniciones' },
+{ name: 'Agua Mineral', price: 230, desc: 'Picante' },
+],
+Cervezas: [
+{ name: 'XXLaguer', price: 230, desc: 'Con guarniciones' },
+{ name: 'Bohemia Clara', price: 230, desc: 'Picante' },
+],
+Cocteles: [
+{ name: 'Mojito', price: 230, desc: 'Con guarniciones' },
+{ name: 'Margarita', price: 230, desc: 'Picante' },
+],
 }
 
 

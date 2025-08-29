@@ -12,7 +12,6 @@ Av. Justo Sierra Méndez 497, Barrio de San Román, 24040 , San Francisco de Cam
 <h4 className="font-semibold">Secciones</h4>
 <ul className="mt-2 space-y-1 text-white/70">
 <li><a href="/menu" className="hover:underline">Menú</a></li>
-<li><a href="/reservaciones" className="hover:underline">Reservaciones</a></li>
 <li><a href="/nosotros" className="hover:underline">Nosotros</a></li>
 <li><a href="/contacto" className="hover:underline">Contacto</a></li>
 </ul>
