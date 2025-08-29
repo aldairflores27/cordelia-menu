@@ -19,8 +19,8 @@ const items = [
     img: molcajete, 
   },
   { cat: 'Cocteles', name: 'Ensalada', desc: 'Pulpo y camarón en salsa especial', price: 150, img: ensalada },
-  { cat: 'Pescados', name: 'Pescado Zarandeado', desc: 'Marinado de la casa, 2 acompañamientos', price: 240, img: '' },
-  { cat: 'Extras',   name: 'Arroz a la Tumbada',  desc: 'Estilo veracruzano',                 price: 120, img: '' },
+  { cat: 'Camaron', name: 'Agua Chile', desc: '(descripcion)', price: 240, img: '' },
+  { cat: 'Ceviche',   name: 'Ceviche',  desc: '(descripcion)',                 price: 120, img: '' },
 ];
 
 export default function MenuSection(){
