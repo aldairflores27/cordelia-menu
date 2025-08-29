@@ -1,6 +1,7 @@
 
 import molcajete from '../assets/molcajetecordelia.jpeg';
 import ensalada from '../assets/menu1.jpg';
+import { Link } from 'react-router-dom';
 
 const items = [
   {
@@ -24,10 +25,10 @@ const items = [
 
 export default function MenuSection(){
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16" id="menu">
+<section className="max-w-7xl mx-auto px-4 pt-8 md:pt-10 pb-16" id="menu">
       <div className="flex items-end justify-between gap-4">
         <h2 className="text-3xl md:text-4xl font-extrabold">Menú Destacado</h2>
-        <a href="/menu" className="text-turquesa hover:underline">Ver todo</a>
+        <Link to="/menu" className="text-turquesa hover:underline">Ver todo</Link>
       </div>
 
       <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
