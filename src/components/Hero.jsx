@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import hero from '../assets/m1.png'; // <-- tu imagen
 
 export default function Hero() {
   return (
@@ -6,10 +7,11 @@ export default function Hero() {
       className="relative isolate min-h-[58vh] md:min-h-[64vh] px-4 grid place-items-center mb-2 md:mb-4"
       id="top"
     >
+      {/* fondo del hero */}
       <img
-        src="/hero.jpg"
+        src={hero}
         alt="Mariscos frescos"
-        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-60"
       />
 
       <div className="max-w-3xl text-center">
@@ -18,10 +20,7 @@ export default function Hero() {
         </h1>
 
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            to="/menu"
-            className="px-6 py-3 rounded-xl bg-coral text-tinta font-semibold hover:opacity-90"
-          >
+          <Link to="/menu" className="px-6 py-3 rounded-xl bg-coral text-tinta font-semibold hover:opacity-90">
             Ver Menú
           </Link>
         </div>
