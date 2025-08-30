@@ -1,55 +1,73 @@
 // src/components/NavBar.jsx
-import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
-import logo from "../assets/cordeliamenu.jpg"; // 👈 importa el logo
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/cordeliamenu.jpg'; // ⬅️ pon tu logo
 
-export default function Navbar() {
+export default function NavBar() {
   const [open, setOpen] = useState(false);
-  const linkClass = ({ isActive }) =>
-    `px-3 py-2 rounded-xl transition hover:bg-white/10 ${isActive ? "bg-white/10" : ""}`;
+
+  const base =
+    'px-3 py-2 rounded-xl transition hover:bg-white/10';
+  const active = ({ isActive }) =>
+    `${base} ${isActive ? 'bg-white/10 text-white' : 'text-white/90'}`;
+
+  const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur bg-oceano/70 border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-        <img
-  src={logo}
-  alt="Cordelia Mariscos"
-  className="h-16 md:h-20 w-auto object-contain rounded-2xl shrink-0"
-/>
-
-<span className="font-bold tracking-wide text-lg md:text-xl text-coral drop-shadow">
-  CORDELIA MARISCOS
-</span>
-
-
-
+    <header className="sticky top-0 z-50 bg-oceano/80 backdrop-blur border-b border-white/10">
+      <div
+        className="
+          max-w-7xl mx-auto 
+          px-4 
+          h-14 flex items-center justify-between
+          [padding-left:env(safe-area-inset-left)]
+          [padding-right:env(safe-area-inset-right)]
+        "
+      >
+        {/* Logo + nombre */}
+        <Link to="/" className="flex items-center gap-3" onClick={close}>
+          <img
+            src={logo}
+            alt="Cordelia"
+            className="h-9 w-9 rounded-full object-cover"
+          />
+          <span className="font-bold tracking-wide text-yellow-300">
+            CORDELIA MARISCOS
+          </span>
         </Link>
 
+        {/* Links desktop */}
         <nav className="hidden md:flex items-center gap-1">
-          <NavLink to="/" className={linkClass}>Inicio</NavLink>
-          <NavLink to="/menu" className={linkClass}>Menú</NavLink>
-        
-          <NavLink to="/nosotros" className={linkClass}>Nosotros</NavLink>
-   
+          <NavLink to="/" className={active} onClick={close}>Inicio</NavLink>
+          <NavLink to="/menu" className={active} onClick={close}>Menú</NavLink>
+          <NavLink to="/nosotros" className={active} onClick={close}>Nosotros</NavLink>
+          <NavLink to="/contacto" className={active} onClick={close}>Contacto</NavLink>
         </nav>
 
-        <button className="md:hidden p-2 rounded-lg hover:bg-white/10" onClick={()=>setOpen(!open)} aria-label="Abrir menú">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        {/* Botón hamburguesa (móvil) */}
+        <button
+          className="md:hidden p-2 rounded-lg hover:bg-white/10"
+          aria-label="Abrir menú"
+          onClick={() => setOpen(v => !v)}
+        >
+          {/* ícono hamburguesa */}
+          <svg width="24" height="24" viewBox="0 0 24 24" className="text-white">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
         </button>
       </div>
 
-      {open && (
-        <div className="md:hidden border-t border-white/10">
+      {/* Menú móvil desplegable */}
+      <div className={`${open ? 'block' : 'hidden'} md:hidden`}>
+        <div className="bg-oceano/95 border-t border-white/10">
           <div className="px-4 py-3 flex flex-col gap-2">
-            <NavLink onClick={()=>setOpen(false)} to="/" className={linkClass}>Inicio</NavLink>
-            <NavLink onClick={()=>setOpen(false)} to="/menu" className={linkClass}>Menú</NavLink>
-            <NavLink onClick={()=>setOpen(false)} to="/reservaciones" className={linkClass}>Reservaciones</NavLink>
-            <NavLink onClick={()=>setOpen(false)} to="/nosotros" className={linkClass}>Nosotros</NavLink>
-            <NavLink onClick={()=>setOpen(false)} to="/contacto" className={linkClass}>Contacto</NavLink>
+            <NavLink to="/" className={active} onClick={close}>Inicio</NavLink>
+            <NavLink to="/menu" className={active} onClick={close}>Menú</NavLink>
+            <NavLink to="/nosotros" className={active} onClick={close}>Nosotros</NavLink>
+            
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
