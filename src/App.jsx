@@ -4,6 +4,8 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Nosotros from './pages/Nosotros'
+import Contacto from './pages/Contactos';
+import Gracias from './pages/Gracias';
 
 
 
@@ -17,6 +19,8 @@ return (
 <Route path="/menu" element={<Menu />} />
 
 <Route path="/nosotros" element={<Nosotros />} />
+  <Route path="/contacto" element={<Contacto />} />
+<Route path="/gracias" element={<Gracias/>} />
 
 </Routes>
 </main>

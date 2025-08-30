@@ -64,7 +64,7 @@ export default function NavBar() {
             <NavLink to="/" className={active} onClick={close}>Inicio</NavLink>
             <NavLink to="/menu" className={active} onClick={close}>Menú</NavLink>
             <NavLink to="/nosotros" className={active} onClick={close}>Nosotros</NavLink>
-            
+            <NavLink to="/contacto" className={active} onClick={close}>Contactos</NavLink>
           </div>
         </div>
       </div>
